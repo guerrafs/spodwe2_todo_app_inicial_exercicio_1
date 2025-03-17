@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List App</title>
-    <link rel="stylesheet" href="/css/todo-list.css">
+    <link rel="stylesheet" href="/css/todo-app.css">
 </head>
 <body>
     <main class="container">
         <h1>Todo List</h1>
-        <p>Versão inicial da aplicação de lista de tarefas para a disciplina SPODWE2</p>
+        <p>Versão com filtros da aplicação de lista de tarefas </p>
         <input type="text" id="new-todo" placeholder="Adicione aqui sua nova tarefa">
+        <div>
+            <button id="filter-all">Todos</button>
+            <button id="filter-active">Apenas Não Concluídos</button>
+            <button id="filter-completed">Apenas Concluídos</button>
+        </div>
         <ul id="todo-list">
             <!-- Os Todos serão adicionados aqui dinamicamente -->
         </ul>
     </main>
-    <script src="/js/todo-list.js"></script>
+    <script src="/js/todo-app.js"></script>
 </body>
 </html>

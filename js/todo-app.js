@@ -1,4 +1,5 @@
 const todos = [];
+let filter = "all"; 
 
 document.getElementById("new-todo").addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
@@ -12,12 +13,30 @@ document.getElementById("new-todo").addEventListener("keypress", function (e) {
     }
 });
 
+document.getElementById("filter-all").addEventListener("click", function () {
+    filter = "all";
+    renderTodos();
+});
+
+document.getElementById("filter-active").addEventListener("click", function () {
+    filter = "active";
+    renderTodos();
+});
+
+document.getElementById("filter-completed").addEventListener("click", function () {
+    filter = "completed";
+    renderTodos();
+});
+
 function renderTodos() {
     const todoListUl = document.getElementById("todo-list");
 
     todoListUl.innerHTML = "";
 
     for (const todo of todos) {
+        if (filter === "active" && todo.done) continue;
+        if (filter === "completed" && !todo.done) continue;
+
         const todoItemLi = document.createElement("li");
         todoItemLi.textContent = todo.text;
 
